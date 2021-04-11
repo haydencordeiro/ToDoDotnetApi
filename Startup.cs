@@ -30,6 +30,7 @@ namespace ToDoApi
 
             services.AddControllers();
             services.AddScoped<IToDoService, ToDoService>();
+            services.AddAutoMapper(typeof(Startup));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ToDoApi", Version = "v1" });

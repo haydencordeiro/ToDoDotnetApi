@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using ToDoApi.Dtos;
 using ToDoApi.Models;
 using ToDoApi.Services;
 
@@ -36,7 +37,7 @@ namespace ToDoApi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddToDo(ToDo todo)
+        public async Task<IActionResult> AddToDo(AddToDoDto todo)
         {
 
 
