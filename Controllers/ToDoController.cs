@@ -23,17 +23,24 @@ namespace ToDoApi.Controllers
 
         }
         [HttpGet("GetAll")]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
 
-            return Ok(_toDoService.GetAll());
+            return Ok(await _toDoService.GetAll());
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetSingle(int id)
+        public async Task<IActionResult> GetSingle(int id)
         {
-            return Ok(_toDoService.GetSingle(id));
+            return Ok(await _toDoService.GetSingle(id));
         }
 
+        [HttpPost]
+        public async Task<IActionResult> AddToDo(ToDo todo)
+        {
+
+
+            return Ok(await _toDoService.AddToDo(todo));
+        }
     }
 }
